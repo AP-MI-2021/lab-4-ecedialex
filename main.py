@@ -136,7 +136,6 @@ def mirror_list(listai,lst3):
     Returneaza lista obtinuta prin schimbara elementelor din listai ce sunt divizibile cu toate elementele din lst3 cu inversul lor
 
     """
-    result=[]
     p=0
     while p < len(listai):
         if div_with_lst3(listai[p],lst3):
