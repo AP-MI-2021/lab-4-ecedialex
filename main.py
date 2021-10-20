@@ -80,21 +80,35 @@ def mirror(n):
         r=r*10+n%10
         n=n//10
     return r
+def test_mirror():
+    assert mirror(654) == 456
+    assert mirror(111) == 111
+    assert mirror(12345) == 54321
 def list_palindrom(lst1,lst2):
+    """
+    Determina toate palindroamele obținute prin concatenarea elementelor de pe aceleași poziții în cele două liste
+    :param lst1: lista data
+    :param lst2:lista data
+    :return: result ce contine palindroamele
+    """
     result=[]
     l1=len(lst1)
     l2=len(lst2)
     p=0
-    while(p<=l1 and p<=l2):
+    while(p<l1 and p<l2):
         n_str=str(lst1[p])+str(lst2[p])
-        if isPalindrome(int(n_str)):
-            result.append(int(n_str))
+        n=int(n_str)
+
+        if mirror(n) == n:
+            result.append(n)
+        p=p+1
     return result
-
-
+def test_list_palindrom():
+    assert list_palindrom([12, 22, 36, 11],[21, 23, 63, 55, 424]) == [1221, 3663]
+    assert list_palindrom([12, 22, 36, 11,2,222], [21, 23, 63, 55, 424,222]) == [1221, 3663,222222]
 def read_list_3():
     lst3 = []
-    lista3 = input('Introduceti elementele din prima lista separate prin spatiu:')
+    lista3 = input('Introduceti elementele din a treia lista separate prin spatiu:')
     lista3_str_split = lista3.split(' ')
     for num3 in lista3_str_split:
         lst3.append(int(num3))
@@ -129,14 +143,14 @@ def mirror_list(listai,lst3):
             listai[p] =mirror(listai[p])
         p=p+1
     return listai
-
+def test_mirror_list():
+    assert mirror_list([12,22,36,363],[1,2,3,4]) == [21,22,63,363]
 def main():
         lst1=[]
         lst2=[]
         lst3=[]
         while True:
             show_menu()
-            print(mirror(23))
             opt=input('Introduceti o optiune:')
             if opt == '1':
                 lst1,lst2=read_list()
@@ -159,4 +173,7 @@ if __name__ == '__main__':
     test_both_lists_same_evens()
     test_intersection()
     test_div_with_lst_3()
+    test_mirror()
+    test_mirror_list()
+    test_list_palindrom()
     main()
