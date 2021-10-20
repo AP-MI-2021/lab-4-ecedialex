@@ -1,9 +1,9 @@
 def show_menu():
-    print('1.Citirea a două mulțimi de numere întregi de la tastatura sub forma a două liste.')
+    print('1. Citirea a două mulțimi de numere întregi de la tastatura sub forma a două liste.')
     print('2. Afișați dacă cele două liste au același număr de elemente pare.')
     print('3. Afișați o listă reprezentând intersecția listelor citite de la tastatură.')
-    print('4.Afișați toate palindroamele obținute prin concatenarea elementelor de pe aceleași poziții încele două liste.')
-    print('5.Cerinta.')
+    print('4. Afișați toate palindroamele obținute prin concatenarea elementelor de pe aceleași poziții încele două liste.')
+    print('5. Cerinta.')
     print('x. Iesire')
 
 def read_list():
