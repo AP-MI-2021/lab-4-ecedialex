@@ -166,7 +166,7 @@ def main():
             elif opt == 'x':
                     break
             else:
-                print("optiune invalida")
+                print("optiune invalida.")
 if __name__ == '__main__':
     test_even_number()
     test_both_lists_same_evens()
